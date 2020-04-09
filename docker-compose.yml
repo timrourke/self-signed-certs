@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  nginx:
+    image: nginx:1.17.9@sha256:7ac7819e1523911399b798309025935a9968b277d86d50e5255465d6592c0266
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - './certs:/etc/ssl/certs'
+      - './site:/srv/site'
+      - './site.conf:/etc/nginx/conf.d/default.conf'
